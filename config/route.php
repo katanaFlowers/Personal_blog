@@ -1,0 +1,29 @@
+<?php
+use think\Route;
+Route::rule('tech','index/index/tech');
+Route::rule('tech1','index/index/tech1');
+Route::rule('tech2','index/index/tech2');
+Route::rule('tech3','index/index/tech3');
+Route::rule('konomi','index/konomi/konomi');
+Route::rule('diary','index/diary/diary');
+Route::rule('content','index/content/content');
+Route::rule('login','admin/login/login');
+Route::rule('check','admin/check/check');
+Route::rule('out','admin/check/out');
+Route::rule('category','admin/category/category');
+Route::rule('article','admin/article/article');
+Route::rule('delete','admin/check/delete');
+Route::rule('update','admin/update/update');
+Route::rule('edit','admin/check/update');
+Route::rule('write','admin/write/write');
+Route::rule('art_insert','admin/check/insert');
+Route::rule('art_edit','admin/write/artEdit');
+Route::rule('art_delete','admin/check/artDelete');
+Route::rule('art_update','admin/check/artUpdate');
+Route::rule('link_delete','admin/check/linkDelete');
+Route::rule('yonghu','admin/yonghu/yonghu');
+Route::rule('yonghu_edit','admin/yonghu/yonghuEdit');
+Route::rule('user_update','admin/check/userUpdate');
+Route::rule('link_insert','admin/yonghu/linkInsert');
+Route::rule('link_ins','admin/check/linkInsert');
+ ?>

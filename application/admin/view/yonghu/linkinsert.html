@@ -1,0 +1,26 @@
+{include file="base/header" /}
+<!--编辑分类模板-->
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h3 class="text-center">新增友情链接</h3>
+        <form action="link_ins?act=link_ins" method="post">
+            <div class="form-group">
+
+                <input type="text" class="form-control"  placeholder="链接名称" name="username" value="">
+            </div>
+            <div class="form-group">
+                <input type="text"  class="form-control" placeholder="链接" name="link" value="">
+            </div>
+
+            <div class="form-group">
+                <input type="text"  class="form-control" placeholder="分类" name="category" value="">
+            </div>
+
+            <button type="submit" class="btn btn-info btn-block">新增</button>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+<div class="row" style="height: 30px;"></div>
+{include file="base/footer" /}

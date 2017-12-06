@@ -1,0 +1,30 @@
+{php} if(isset($_SESSION['username'])&&$_SESSION['username']=='admin') : {/php}
+<ul class="nav navbar-nav navbar-right">
+  <li><a href="#">Admin</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">后台管理 <span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="./category?act=cat_manage">分类管理</a></li>
+      <li><a href="./article?act=art_manage">博文管理</a></li>
+      <li><a href="./yonghu?act=user_manage">用户管理</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="" onclick="out();return false;">退出</a></li>
+    </ul>
+  </li>
+</ul>
+{php} else : {/php}
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="/index.php?act=login">登录</a></li>
+      </ul>
+{php} endif; {/php}
+<script>
+function out()
+{
+ if(confirm('确定退出吗？'))
+  {
+   window.location.href="./out";
+ } else {
+   window.location.href="./";
+ }
+}
+</script>

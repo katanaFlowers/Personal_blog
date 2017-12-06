@@ -1,0 +1,39 @@
+{include file="base/header" /}
+<!-- 页头 -->
+  <div class="row" >
+    <div class="col-md-9" >
+        <div class="page-header" >
+    <h2>{php} echo $article[0]['art_title']; {/php}</h2>
+  </div>
+</div>
+  <div class="col-md-3" >
+      <div class="page-header1">
+<p style="margin-top:80px;font-size:15px;margin-bottom:6px;letter-spacing:3px;">博客信息</p>
+<hr style="margin:5px auto" />
+</div>
+</div>
+</div>
+<!-- 博文详情 -->
+<div class="row">
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div>
+                <ol class="breadcrumb">
+                    <li><a href="http://www.nnnan.io">首页</a></li>
+                    <li><a href="{php} echo './'.$cat[0]['cat_url'];{/php}">{$cat[0]['cat_name']}</a></li>
+                    <li class="active">{php} echo $article[0]['art_title'].'<span>&nbsp;&nbsp;</span>'.date('Y-m-d',$article[0]['update_time']); {/php}</li>
+                </ol>
+            </div>
+            <div class="panel-body">
+          {php}
+                        //将博文内容先解码:实体字符转预定义标签
+                        $content = htmlspecialchars_decode($article[0]['content']);
+
+                        //将转码后的内容显示出来
+                        echo $content;
+                         {/php}
+            </div>
+        </div>
+    </div>
+{include file="base/right" /}
+{include file="base/footer" /}

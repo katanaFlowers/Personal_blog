@@ -1,0 +1,97 @@
+<!-- 右侧列表 -->
+
+<div class="col-sm-6 col-md-3">
+<div class="thumbnail" style="border:0">
+<img  src="/static/ima/logo.jpg" alt="..." style="border:0">
+  昵称：-喃楠楠-<br/>
+  博龄：{php} echo $data['year'];{/php}年{php} echo $data['mon'];{/php}月<br/>
+  Github：<a href="https://github.com/katanaFlowers" target="_blank" title="katanaFlowers" style="color:#5e5e5e;"onmouseover="this.style.cssText='text-decoration:none;'" onmouseout="this.style.cssText='color:#5e5e5e'">katanaFlowers</a><br />
+  Email：wymercif@163.com<br/>
+  <script type="text/javascript">
+var caution=false
+function setCookie(name,value,expires,path,domain,secure)
+{
+ var curCookie=name+"="+escape(value) +
+ ((expires)?";expires="+expires.toGMTString() : "") +
+ ((path)?"; path=" + path : "") +
+ ((domain)? "; domain=" + domain : "") +
+ ((secure)?";secure" : "")
+ if(!caution||(name + "=" + escape(value)).length <= 4000)
+ {
+ document.cookie = curCookie
+ }
+ else if(confirm("Cookie exceeds 4KB and will be cut!"))
+ {
+ document.cookie = curCookie
+ }
+}
+function getCookie(name)
+{
+ var prefix = name + "="
+ var cookieStartIndex = document.cookie.indexOf(prefix)
+ if (cookieStartIndex == -1)
+ {
+ return null
+ }
+ var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+ if(cookieEndIndex == -1)
+ {
+ cookieEndIndex = document.cookie.length
+ }
+ return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+}
+function deleteCookie(name, path, domain)
+{
+ if(getCookie(name))
+ {
+ document.cookie = name + "=" +
+ ((path) ? "; path=" + path : "") +
+ ((domain) ? "; domain=" + domain : "") +
+ "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+ }
+}
+function fixDate(date)
+{
+ var base=new Date(0)
+ var skew=base.getTime()
+ if(skew>0)
+ {
+ date.setTime(date.getTime()-skew)
+ }
+}
+var now=new Date()
+fixDate(now)
+now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if(!visits)
+{
+ visits=1;
+}
+else
+{
+ visits=parseInt(visits)+1;
+}
+setCookie("counter", visits, now)
+document.write("总浏览量 - [" + visits+"]" )
+</script>
+<br />
+  技术文章 - [{php} echo $data['tech'];{/php}]<br/>
+  不务正业 - [{php} echo $data['konomi'];{/php}]<br/>
+  胡思乱语 - [{php} echo $data['diary'];{/php}]<br/>
+
+  <p style="margin-top:10px;font-size:15px;margin-bottom:0;letter-spacing:3px;">友情连接</p>
+  <hr style="margin:5px auto"/>
+  {php} foreach($links as $link) : {/php}
+  <a href="{php} echo $link['link'];{/php}" target="_blank" style="color:#5e5e5e;"onmouseover="this.style.cssText='text-decoration:none;'" onmouseout="this.style.cssText='color:#5e5e5e'">{php} echo $link['username'];{/php}</a>
+  {php} endforeach;{/php}
+  <p style="margin-top:10px;font-size:15px;margin-bottom:0;letter-spacing:3px;">关于本站<small></small></p>
+  <hr style="margin:5px auto"/>
+  这是一个关于代码和学习的小空间<br>
+  你我互不相识，从未谋面<br>
+  由旋律而来，或安静，或忧伤<br>
+  你仰望星空<br>
+  我弹着吉他<br>
+  倾听耳畔的风，感受重叠的时光~~<br/>
+</div>
+</div>
+</div>

@@ -1,0 +1,112 @@
+{include file="base/header" /}
+<!-- 页头 -->
+  <div class="row" style="border:0;margin-bottom:0px;padding-bottom:0;">
+    <div class="col-md-9" style="border:0;margin-bottom:0px;padding-bottom:0">
+        <div class="page-header" style="border:0;margin-bottom:0px;padding-bottom:0">
+    <h2>最新博文 </h2>
+  </div>
+</div>
+  <div class="col-md-3" >
+      <div class="page-header1">
+<p style="margin-top:80px;font-size:15px;margin-bottom:6px;letter-spacing:3px;">博客信息</p>
+<hr style="margin:5px auto" />
+</div>
+</div>
+</div>
+
+
+<!-- 导航 -->
+
+<div class="row" style="">
+  <div class="col-md-9">
+    <div>
+
+      <!-- 标签页 Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a href="/tech?cat=1" aria-controls="PHP" >
+PHP
+      </a> </li>
+        <li role="presentation"><a href="tech1?cat=1" aria-controls="database" >
+数据库
+        </a></li>
+        <li role="presentation" class="active"><a href="tech2?cat=1" aria-controls="frame" >
+框架
+        </a></li>
+        <li role="presentation"><a href="tech3?cat=1" aria-controls="sundry" >
+杂项
+        </a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        {php} foreach($art1 as $vo) : {/php}
+        <div role="tabpanel" class="tab-pane" id="php" >
+          <div  class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="marging-top:3px">
+            <div style="border:0" class="panel panel-default" >
+
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" style="marging-top:3px">
+                <div class="panel-body" >
+                {php} echo $vo['content']; {/php}
+
+
+                 <a style="border:0;margin:0"  class="btn btn-info btn-xs" href="{php} echo './'.$vo['art_url']; {/php}" role="button">点击阅读 >></a>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {php}  endforeach; {/php}
+        {php} foreach($art2 as $vo ) : {/php}
+        <div role="tabpanel" class="tab-pane" id="database">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" >
+            <div style="border:0" class="panel panel-default" >
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" >
+                <div class="panel-body" >
+                  {php} echo $vo['content']; {/php}
+                 <a style="border:0"  class="btn btn-info btn-xs" href="{php} echo './'.$vo['art_url']; {/php}" role="button">点击阅读 >></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {php} endforeach; {/php}
+        {php} foreach($art3 as $vo ) : {/php}
+        <div role="tabpanel" class="tab-pane active" id="frame">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" >
+            <div style="border:0" class="panel panel-default" >
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" >
+                <div class="panel-body" >
+                {php} echo htmlspecialchars_decode(substr($vo['content'],0,500));{/php}
+                 <a style="border:0"  class="btn btn-info btn-xs" href="{php} echo './'.$vo['art_url']; {/php}" role="button">点击阅读 >></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {php} endforeach; {/php}
+        {php} foreach($art4 as $vo ) : {/php}
+        <div role="tabpanel" class="tab-pane" id="sundry">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" >
+            <div style="border:0" class="panel panel-default" >
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" >
+                <div class="panel-body" >
+                {php} echo $vo['content']; {/php}
+                 <a style="border:0"  class="btn btn-info btn-xs" href="{php} echo './'.$vo['art_url']; {/php}" role="button">点击阅读 >></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {php} endforeach; {/php}
+      </div>
+
+    </div>
+ </div>
+
+
+
+{include file="base/right" /}
+{include file="base/pagination" /}
+{include file="base/footer" /}

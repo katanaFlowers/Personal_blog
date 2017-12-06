@@ -1,0 +1,46 @@
+{include file="base/header" /}
+<!--页头 -->
+  <div class="row">
+    <div class="col-md-9">
+        <div class="page-header">
+    <h2>Slash青年？ </h2>
+  </div>
+</div>
+  <div class="col-md-3">
+      <div class="page-header1">
+<p style="margin-top:80px;font-size:15px;margin-bottom:6px;letter-spacing:3px;">博客信息</p>
+<hr style="margin:5px auto" />
+</div>
+</div>
+</div>
+
+<!-- 左侧 -->
+<div class="row">
+  <div class="col-md-9">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+     {php} foreach($art as $vo) : {/php}
+        <a  href="{php} echo $vo['art_url']; {/php}" >
+        {php} echo $vo['art_title']; {/php}
+        </a>
+      </h4>
+    </div>
+    <div >
+      <div class="panel-body">
+      {php} $value=htmlspecialchars_decode($vo['content']);
+            $str= substr($value,0,500);
+            echo $str;                 {/php}
+<a style="border:0"  class="btn btn-info btn-xs" href="{php} echo $vo['art_url'];{/php}" role="button">点击阅读 >></a>
+      </div>
+      {php} endforeach; {/php}
+    </div>
+  </div>
+</div>
+</div>
+
+
+{include file="base/right" /}
+{include file="base/pagination" /}
+{include file="base/footer" /}

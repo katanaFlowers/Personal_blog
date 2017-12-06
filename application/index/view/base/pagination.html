@@ -1,0 +1,23 @@
+<!-- 编页 -->
+<div class="row">
+  <div class="col-md-9">
+    <nav aria-label="Page navigation" style="border:0px solid red">
+      <ul class="pagination" style="margin-left:38%">
+        <li>
+
+          <a href="{php} $page=($pagecurrent-1)<=1 ? 1 : ($pagecurrent-1); echo '?'.$url.'&page='.$page;{/php}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {php} foreach(range(1,$sum_page) as $vo) : {/php}
+        <li><a href="{php} echo '?'.$url.'&page='.$vo;{/php}"> {php} echo $vo; {/php}</a></li>
+        {php} endforeach; {/php}
+        <li>
+          <a href="{php} $page=($pagecurrent+1)>=$sum_page ? $sum_page : ($pagecurrent+1); echo '?'.$url.'&page='.$page; {/php}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+</div>
+</div>

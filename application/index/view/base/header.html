@@ -1,0 +1,54 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-CN" style="">
+  <head>
+    <link rel="icon" href="favicon.png" type="image/x-icon"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>{$titleName}</title>
+
+    <!-- Bootstrap -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- wangEditor -->
+    <link rel="stylesheet" type="text/css" href="/lib/wangeditor/dist/css/wangEditor.min.css">
+
+  </head>
+  <body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+  <a class="navbar-brand" href="/">{$info}</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+           {php} foreach($catName as $value) : {/php}
+             {php}   $act = ($value['id'] == $active) ? 'active' : '';{/php}
+              <li class= "{$act}"><a href="{php} echo $value['cat_url']; {/php}">{php} echo $value['cat_name'] {/php} </a></li>
+
+          {php}  endforeach;{/php}
+
+                </ul>
+
+{include file="base/islog" /}
+
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
+
+    </div>
+  </div>
